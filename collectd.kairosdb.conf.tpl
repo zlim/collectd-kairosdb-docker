@@ -26,6 +26,7 @@ LoadPlugin cpu
 
   <Module collectd_iostat_python>
     Path "/usr/bin/iostat"
+    Disks "{{ IOSTAT_DISKS }}"
     Interval 2
     Count 2
     Verbose false
