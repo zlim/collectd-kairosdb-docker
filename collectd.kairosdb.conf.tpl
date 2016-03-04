@@ -22,6 +22,18 @@ LoadPlugin cpu
 <Plugin "python">
   ModulePath "/usr/lib64/collectd/"
 
+  Import "collectd_iostat_python"
+
+  <Module collectd_iostat_python>
+    Path "/usr/bin/iostat"
+    Interval 2
+    Count 2
+    Verbose false
+    NiceNames false
+    PluginName collectd_iostat_python
+    TypesDB "/etc/collectd/types/iostat_types.db"
+  </Module>
+
   Import "kairosdb_writer"
 
   <Module "kairosdb_writer">
